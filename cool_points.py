@@ -77,7 +77,7 @@ def cool_points(msg, chat, chat_type, mode=None):
         print 'Nothing available for group'
 
     print cool_alert
-    client.sendMessage(cool_alert, thread_id=client.uid, thread_type=ThreadType.USER)#chat, thread_type=chat_type)
+    client.sendMessage(cool_alert, thread_id=chat.uid, thread_type=chat_type)
 
 
 
@@ -115,7 +115,7 @@ def parse_command():
     thread_type = thread.type
         
     print 'LOG: sending', msg, 'to', thread.name
-    client.sendMessage(msg, thread_id=client.uid, thread_type=ThreadType.USER)#to, thread_type=thread_type)
+    client.sendMessage(msg, thread_id=to, thread_type=thread_type)
     
     if '++' in msg:
         cool_points(msg, thread, thread_type, mode='add')
